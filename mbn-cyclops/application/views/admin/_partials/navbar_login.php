@@ -1,0 +1,2 @@
+<img src="<?php echo base_url('gambar/img/daikin-login.png'); ?>" style="width: 50px; height: 50px; margin-bottom: -70px; margin-left: 10px;"></img>
+<span style="display: flex; font-size: 26px; font-weight: bold; color: black; margin-bottom: 0px; margin-left: 10px;">DAIKIN CYCLOPS ( Cycle Loading Part System )</span>
