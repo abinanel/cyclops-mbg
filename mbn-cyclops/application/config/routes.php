@@ -65,5 +65,6 @@ $route['admin/incoming-orders/list'] = 'admin/IncomingOrders';
 $route['admin/incoming-orders/form/(:num)'] = 'admin/IncomingOrders/incomingForm/$1';
 $route['register-school'] = 'Register_School';
 $route['register-kantin'] = 'Register_Kantin';
+$route['register-supplier'] = 'Register_Supplier';
 $route['admin/dashboard'] = 'admin/SampleDashboard';
 $route['admin/dashboard-kantin'] = 'admin/SampleDashboardKantin';

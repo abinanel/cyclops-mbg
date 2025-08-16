@@ -9,7 +9,7 @@
         html, body {
             height: 100%;
             margin: 0;
-            background: linear-gradient(135deg, #c1efff, #e1f5fe);
+            background: linear-gradient(135deg, #ff6c6cff, #ff1f1fff);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -35,7 +35,7 @@
             text-align: center;
             font-size: 24px;
             font-weight: 600;
-            color: #0d6efd;
+            color: #f81919ff;
             margin-bottom: 10px;
         }
 
@@ -75,13 +75,17 @@
             background-color: rgba(255, 255, 255, 0.6);
             padding: 10px 20px;
             border-radius: 12px;
-            color:rgb(43, 167, 208);
+            color: #000000ff;
         }
 
         .logo-mbn {
             height: 100px;
             width: auto;
             margin-right: 10px;
+        }
+
+        a.no-underline {
+            text-decoration: none;
         }
     </style>
 </head>
@@ -90,7 +94,7 @@
     <div class="page-wrapper">
         <div class="branding">
             <img src="<?= base_url('assets/img/MBN_logo.png') ?>" alt="{MBN Logo} " class="logo-mbn" />
-            <span>Sistem Pesan Katering</span>
+            <span>Program Makan Gratis Nasional</span>
         </div>
 
         <div class="login-container">
@@ -127,8 +131,9 @@
                 <!-- Tambahan link -->
                 <div class="mt-4">
                     <span>Belum Punya Akun? </span><br>
-                    <a href="<?php echo site_url('register-school') ?>">Daftarkan Sekolah</a> atau
-                    <a href="<?php echo site_url('register-kantin') ?>">Daftarkan Kantin</a>
+                    <a href="<?php echo site_url('register-school') ?>" class="no-underline">Daftarkan Sekolah</a> ,
+                    <a href="<?php echo site_url('register-kantin') ?>" class="no-underline">Daftarkan Kantin</a> 
+                    atau <a href="<?php echo site_url('register-supplier') ?>" class="no-underline">Daftarkan Supplier</a>
                 </div>
             </form>
         </div>

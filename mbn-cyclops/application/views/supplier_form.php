@@ -23,14 +23,14 @@
             <div class="container mt-5">
                 <div class="card">
                     <div class="card-header">
-                    <h3 class="card-title">Formulir Pendaftaran Sekolah</h3>
+                    <h3 class="card-title">Formulir Pendaftaran Supplier</h3>
                 </div>
                 <div class="card-body">
-                    <form id="SchoolRegistrationForm" method="post">
+                    <form id="SupplierRegistrationForm" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Username</label>
+                                    <label for="username" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" name="username" required>
                                 </div>
                             </div>
@@ -43,73 +43,53 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="npsn" class="form-label">NPSN</label>
-                                    <input type="text" class="form-control" id="npsn" name="npsn" required>
+                                    <label for="nama_supplier" class="form-label">Nama Perusahaan / Supplier</label>
+                                    <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" required>
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">Nama Sekolah</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="tingkatan" class="form-label">Tingkatan Sekolah</label>
-                                    <select class="form-select" id="tingkatan" name="tingkatan" required>
-                                        <option value="" selected>Pilih Tingkatan</option>
-                                        <option value="SD">SD</option>
-                                        <option value="SMP">SMP</option>
-                                        <option value="SMA">SMA</option>
-                                        <option value="SMK">SMK</option>
-                                        <option value="TK">TK</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="kepala_sekolah" class="form-label">Kepala Sekolah</label>
-                                    <input type="text" class="form-control" id="kepala_sekolah" name="kepala_sekolah" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="akreditasi" class="form-label">Akreditasi</label>
-                                    <select class="form-select" id="akreditasi" name="akreditasi" required>
-                                        <option value="" selected>Pilih Akreditasi</option>
-                                        <option value="A">A</option>
-                                        <option value="B">B</option>
-                                        <option value="C">C</option>
-                                        <option value="Belum Terakreditasi">Belum Terakreditasi</option>
-                                    </select>
+                                    <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
+                                    <input type="text" class="form-control" id="jenis_usaha" name="jenis_usaha" placeholder="Contoh: Makanan, Minuman, ATK" required>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="kurikulum" class="form-label">Kurikulum</label>
-                                    <input type="text" class="form-control" id="kurikulum" name="kurikulum" required>
+                                    <label for="izin_usaha" class="form-label">Nomor Izin Usaha (SIUP / NIB)</label>
+                                    <input type="text" class="form-control" id="izin_usaha" name="izin_usaha" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="luas_tanah" class="form-label">Luas Tanah (m²)</label>
-                                    <input type="number" class="form-control" id="luas_tanah" name="luas_tanah" required>
+                                    <label for="npwp" class="form-label">NPWP</label>
+                                    <input type="text" class="form-control" id="npwp" name="npwp" required>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Supplier</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="telepon" class="form-label">Telepon</label>
                                     <input type="text" class="form-control" id="telepon" name="telepon" required>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="penanggung_jawab" class="form-label">Nama Penanggung Jawab</label>
+                            <input type="text" class="form-control" id="penanggung_jawab" name="penanggung_jawab" required>
                         </div>
 
                         <div class="mb-3">
@@ -147,60 +127,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email Sekolah</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="sk_pendirian" class="form-label">No. SK Pendirian</label>
-                                    <input type="text" class="form-control" id="sk_pendirian" name="sk_pendirian" required>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3">
-                                    <label for="tanggal_sk" class="form-label">Tanggal SK Pendirian</label>
-                                    <input type="date" class="form-control" id="tanggal_sk" name="tanggal_sk" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="sk_pendirian" class="form-label">SK Pendirian</label>
-                                    <input type="text" class="form-control" id="sk_pendirian" name="sk_pendirian" value="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="tanggal_sk_pendirian" class="form-label">Tanggal SK Pendirian</label>
-                                    <input type="date" class="form-control" id="tanggal_sk_pendirian" name="tanggal_sk_pendirian" value="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="sk_operasional" class="form-label">SK Operasional</label>
-                                    <input type="text" class="form-control" id="sk_operasional" name="sk_operasional" value="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="tanggal_sk_operasional" class="form-label">Tanggal SK Operasional</label>
-                                    <input type="date" class="form-control" id="tanggal_sk_operasional" name="tanggal_sk_operasional" value="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="excel_siswa" class="form-label">Unggah Data Siswa (Format Excel)</label>
-                                    <input type="file" class="form-control" id="excel_siswa" name="excel_siswa" accept=".xls,.xlsx" required>
-                                    <div class="form-text">Hanya file .xls atau .xlsx yang diperbolehkan</div>
+                                    <label for="produk" class="form-label">Upload Daftar Produk</label>
+                                    <input type="file" class="form-control" id="produk" name="produk" accept=".xls,.xlsx,.pdf" required>
+                                    <div class="form-text">Format: Excel atau PDF</div>
                                 </div>
                             </div>
                         </div>
