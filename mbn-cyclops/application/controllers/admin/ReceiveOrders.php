@@ -73,12 +73,12 @@ class ReceiveOrders extends CI_Controller {
 		// Buat mapping supplier_id => name
 		$kantin_map = [];
 		foreach ($Kantins as $kantin) {
-			$kantin_map[$kantin->kantin_id] = $kantin->kantin_name;
+			$kantin_map[$kantin->kantin_id] = $kantin->nama_kantin;
 		}
 
 		// Tambahkan supplier_name ke setiap PO
 		foreach ($split_po_lists as $po) {
-			$po->kantin_name = isset($kantin_map[$po->kantin_id]) ? $kantin_map[$po->kantin_id] : null;
+			$po->nama_kantin = isset($kantin_map[$po->kantin_id]) ? $kantin_map[$po->kantin_id] : null;
 		}
 
 		log_message('debug', 'Isi split_po_lists: ' . print_r($split_po_lists, true));
@@ -143,7 +143,7 @@ class ReceiveOrders extends CI_Controller {
 		if($isAllReceived == 1) {
 			//update status po 
 			$poData = [
-				'status' => 'completed'
+				'status' => 'diterima'
 			];
 			$this->Purchase_orders_model->update($poID, $poData);
 		}

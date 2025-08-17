@@ -2,13 +2,13 @@
 
 class Suppliers_model extends CI_Model
 {
-	private $_table = 'suppliers';
+	private $_table = 'supplier';
 
     public function get_suppliers_by_ids($ids) {
         if (empty($ids)) return [];
     
         $this->db->where_in('supplier_id', $ids);
-        $query = $this->db->get('suppliers'); // Ganti nama tabel jika berbeda
+        $query = $this->db->get('supplier'); // Ganti nama tabel jika berbeda
         return $query->result(); // return array of supplier objects
     }
 

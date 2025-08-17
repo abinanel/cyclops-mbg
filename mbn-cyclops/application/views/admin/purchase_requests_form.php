@@ -66,8 +66,15 @@
                                             <input type="hidden" id="item-id-0" name="items[0][id]">
                                             <div class="col-md-2">
                                                 <div class="mb-3">
-                                                    <label for="item-name" class="form-label">Paket Makanan</label>
-                                                    <input type="text" class="form-control" id="item-name-0" name="items[0][name]" required>
+                                                    <label for="item-name-0" class="form-label">Paket Makanan</label>
+                                                    <select class="form-select" id="item-name-0" name="items[0][name]" required>
+                                                        <option value="">-- Pilih Paket --</option>
+                                                        <option value="Nasi Ayam">Nasi Ayam</option>
+                                                        <option value="Nasi Goreng">Nasi Goreng</option>
+                                                        <option value="Nasi dan Mie Goreng">Nasi dan Mie Goreng</option>
+                                                        <option value="Nasi Pecel">Nasi Pecel</option>
+                                                        <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
@@ -76,7 +83,8 @@
                                                     <input type="text" class="form-control" id="item-qty-0" name="items[0][qty]" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-2">
+                                            <input type="hidden" id="item-unit-0" name="items[0][unit]" value="pack">
+                                            <!-- <div class="col-md-2">
                                                 <div class="mb-3">
                                                     <label for="dropdown" class="form-label">Satuan</label>
                                                     <select class="form-select" id="item-unit-0" name="items[0][unit]" required>
@@ -84,14 +92,14 @@
                                                         <option value="pack">Bungkus</option>
                                                     </select>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label for="dropdown" class="form-label">Kantin</label>
                                                     <select class="form-select" id="item-kantin-0" name="items[0][kantin]" required>
-                                                        <option value="" selected>Pilih Kantin</option>
+                                                        <option value="" selected>-- Pilih Kantin --</option>
                                                         <?php foreach ($kantin_list as $kantin): ?>
-                                                            <option value="<?= $kantin->kantin_id ?>"><?= $kantin->kantin_name ?></option>
+                                                            <option value="<?= $kantin->kantin_id ?>"><?= $kantin->nama_kantin ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
@@ -185,7 +193,7 @@
                 <div class="modal-content">
                 <div class="modal-body text-center">
                     <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Memuat...</span>
+                    <span class="sr-only"></span>
                     </div>
                     <h5 class="mt-2">Memuat...</h5>
                 </div>
@@ -489,23 +497,24 @@
                             //$('#status-note').val(dataLists.status_note);
 
                             // Tambahkan logic readonly jika status == 'approved'
-                            const isApproved = dataLists.status === 'kirim';
-                            const isRejected = dataLists.status === 'kirim';
+                            const readonlyStatuses = ['kirim', 'diproses', 'dikirim', 'diterima'];
                             console.log(dataLists.status);
-                            if (isApproved || isRejected) {
+                            if (readonlyStatuses.includes(dataLists.status)) {
                                 const statusSelect = $('#status');
                                 const statusValue = dataLists.status;
+
+                                // Tambahkan option jika belum ada
                                 if (statusSelect.find(`option[value="${statusValue}"]`).length === 0) {
                                     statusSelect.append(`<option value="${statusValue}">${statusValue}</option>`);
                                 }
-                                statusSelect.val(statusValue);
-                                // Disable the dropdown
-                                statusSelect.prop('disabled', true);
 
-                                $('#addInputBtn').hide();  // Sembunyikan tombol addInputBtn jika ada
-                                $('#submitBtn').hide(); 
+                                // Set value & disable
+                                statusSelect.val(statusValue).prop('disabled', true);
+
+                                // Sembunyikan tombol
+                                $('#addInputBtn').hide();
+                                $('#submitBtn').hide();
                             }
-
                         },
                         error: function() {
                             alert('Error fetching data.');
@@ -526,8 +535,7 @@
                 };
 
                 function populateItems(dataLists) {
-                    const isApproved = dataLists.status === 'kirim';
-                    const isRejected = dataLists.status === 'kirim';
+                    const readonlyStatuses = ['kirim', 'diproses', 'dikirim', 'diterima'];
                     
                     // Isi input #pr-id jika ada di data
                     if (dataLists.po_id !== undefined) {
@@ -551,7 +559,7 @@
                                 }
 
                                 // Disable the element
-                                if (isApproved || isRejected) {
+                                if (readonlyStatuses.includes(dataLists.status)) {
                                     el.disabled = true;
                                 }
                             });

@@ -35,7 +35,7 @@
                                     <thead>
                                         <tr>
                                             <th>Pesanan ID</th>
-                                            <th>Kantin</th>
+                                            <th>Sekolah</th>
                                             <th>Tanggal Pemesanan</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
@@ -106,7 +106,7 @@
                     $.each(dataList, function(index, data) {
                         var row = '<tr>' +
                                 '<td>' + data.po_id + '</td>' +
-                                '<td>' + data.kantin_name + '</td>' +
+                                '<td>' + data.nama_sekolah + '</td>' +
                                 '<td>' + data.request_date + '</td>' +
                                 '<td>' + data.status + '</td>' +
                                 '<td> <button type="button" class="btn btn-primary btn-sm me-2 editBtn" data-id="' + data.split_po_id + '">Lihat</button> </td>' +

@@ -26,9 +26,9 @@
             background-color: white;
             border-radius: 16px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            width: 100%;
-            max-width: 400px;
+            padding: 30px;
+            width: 30%;
+            max-width: 30%;
         }
 
         .login-title {
@@ -102,7 +102,7 @@
             <div class="subtitle">Silakan masuk untuk melanjutkan</div>
 
             <?php if ($this->session->flashdata('message_login_error')) : ?>
-                <div class="alert alert-danger text-center">
+                <div class="alert-danger text-center" style="font-size: 13px; color: red;">
                     <?= $this->session->flashdata('message_login_error') ?>
                 </div>
             <?php endif ?>

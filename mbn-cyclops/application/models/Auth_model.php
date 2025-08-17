@@ -69,6 +69,11 @@ class Auth_model extends CI_Model
 		return !$this->session->has_userdata(self::SESSION_KEY);
 	}
 
+	public function getByUserId($user_id)
+    {
+        return $this->db->get_where($this->_table, ["user_id" => $user_id])->row();
+    }
+
 	// private function _update_last_login($id)
 	// {
 	// 	$data = [

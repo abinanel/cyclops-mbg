@@ -5,6 +5,10 @@
         <?php $this->load->view("admin/_partials/navbar_registration.php") ?>
         <!-- Flatpickr CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <!-- Load jQuery & Select2 CSS/JS -->
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <!-- Flatpickr JS -->
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <style>
@@ -127,6 +131,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
+                                    <label for="kantin" class="form-label">Pilih Kantin</label>
+                                    <select class="form-control" id="kantin" name="kantin[]" multiple="multiple">
+                                        <option value="abc">Kantin ABC</option>
+                                        <option value="xyz">Kantin XYZ</option>
+                                        <option value="kkk">Kantin KKK</option>
+                                        <option value="ccc">Kantin CCC</option>
+                                        <!-- dst ratusan data -->
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="mb-3">
                                     <label for="produk" class="form-label">Upload Daftar Produk</label>
                                     <input type="file" class="form-control" id="produk" name="produk" accept=".xls,.xlsx,.pdf" required>
                                     <div class="form-text">Format: Excel atau PDF</div>
@@ -204,5 +221,13 @@
         <script src="https://unpkg.com/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?php echo base_url('js/scripts.js') ?>"></script>
         <?php $this->load->view("admin/_partials/footer.php") ?>
+        <script>
+            $(document).ready(function() {
+                $('#kantin').select2({
+                    placeholder: "Pilih Kantin...",
+                    allowClear: true
+                });
+            });
+        </script>
     </body>
 </html>

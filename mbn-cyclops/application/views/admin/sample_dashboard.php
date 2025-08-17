@@ -73,6 +73,24 @@
                         </div>
                     </div>
 
+                    <div class="row mb-4">
+                        <!-- TOP 5 Kecukupan Gizi -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5>🥗 TOP 5 Makanan - Kecukupan Gizi</h5>
+                                <canvas id="topGiziChart" width="450" height="100"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Status Response Komplen -->
+                        <div class="col-md-6">
+                            <div class="card">
+                                <h5>📩 Status Response Komplen</h5>
+                                <canvas id="statusResponseChart" width="450" height="120"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card">
                         <h5>📅 History Pemesanan Makanan - 6 Bulan Terakhir</h5>
                         <canvas id="historyChart" width="1100" height="150"></canvas>
@@ -172,6 +190,60 @@
                 }
                 }
             }
+            });
+
+            // Dummy data untuk TOP 5 Kecukupan Gizi
+            const giziLabels = ['Nasi Goreng', 'Ayam Geprek', 'Mie Ayam', 'Bakso', 'Sate Ayam'];
+            const giziScore = [85, 90, 78, 82, 88]; // persentase kecukupan gizi
+
+            new Chart(document.getElementById('topGiziChart'), {
+                type: 'bar',
+                data: {
+                    labels: giziLabels,
+                    datasets: [{
+                        label: 'Kecukupan Gizi (%)',
+                        data: giziScore,
+                        backgroundColor: '#FFA500'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: {
+                            label: context => context.parsed.y + '%'
+                        }}
+                    },
+                    scales: {
+                        y: {
+                            min: 0,
+                            max: 100,
+                            ticks: { callback: value => value + '%' }
+                        }
+                    }
+                }
+            });
+
+            // Dummy data untuk Status Response Komplen
+            const statusLabels = ['Selesai', 'Pending', 'Ditolak'];
+            const statusCount = [45, 15, 5];
+
+            new Chart(document.getElementById('statusResponseChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: statusLabels,
+                    datasets: [{
+                        label: 'Status Response',
+                        data: statusCount,
+                        backgroundColor: ['#4CAF50', '#FFC107', '#F44336']
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        legend: { position: 'right' }
+                    }
+                }
             });
         </script>
     </body>

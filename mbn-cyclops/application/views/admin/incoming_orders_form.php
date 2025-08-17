@@ -40,10 +40,16 @@
                                                 <input type="text" class="form-control bg-gray" id="split-po-id" name="split-po-id" value="<?php echo isset($split_po->po_id) ? $split_po->po_id : ''; ?>" readonly>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <!-- <div class="col-md-4">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">Kantin</label>
-                                                <input type="text" class="form-control bg-gray" id="kantin-name" name="kantin-name" value="<?php echo isset($suppliers->kantin_name) ? $suppliers->kantin_name : ''; ?>" readonly>
+                                                <input type="text" class="form-control bg-gray" id="kantin-name" name="kantin-name" value="<?php echo isset($suppliers->nama_kantin) ? $suppliers->nama_kantin : ''; ?>" readonly>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="nama_sekolah" class="form-label">Sekolah</label>
+                                                <input type="text" class="form-control bg-gray" id="nama_sekolah" name="nama_sekolah" value="<?php echo isset($sekolah->department_name) ? $sekolah->department_name : ''; ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -193,9 +199,9 @@
                 <div class="modal-content">
                 <div class="modal-body text-center">
                     <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
+                    <span class="sr-only"></span>
                     </div>
-                    <h5 class="mt-2">Loading...</h5>
+                    <h5 class="mt-2">Memuat...</h5>
                 </div>
                 </div>
             </div>

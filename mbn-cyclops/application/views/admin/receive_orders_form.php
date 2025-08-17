@@ -43,7 +43,7 @@
                                         <div class="col-md-5">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">Kantin</label>
-                                                <input type="text" class="form-control bg-gray" id="supplier-name" name="supplier-name" value="<?php echo isset($suppliers->kantin_name) ? $suppliers->kantin_name : ''; ?>" readonly>
+                                                <input type="text" class="form-control bg-gray" id="supplier-name" name="supplier-name" value="<?php echo isset($suppliers->nama_kantin) ? $suppliers->nama_kantin : ''; ?>" readonly>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -195,9 +195,9 @@
                 <div class="modal-content">
                 <div class="modal-body text-center">
                     <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Loading...</span>
+                    <span class="sr-only"></span>
                     </div>
-                    <h5 class="mt-2">Loading...</h5>
+                    <h5 class="mt-2">Memuat...</h5>
                 </div>
                 </div>
             </div>

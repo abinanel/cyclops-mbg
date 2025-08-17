@@ -21,6 +21,13 @@ class Purchase_orders_model extends CI_Model
         return $query->row(); // return berupa satu object
     }
 
+    public function get_by_ids($ids)
+    {
+        if (empty($ids)) return [];
+        $this->db->where_in('po_id', $ids);
+        return $this->db->get('purchase_orders')->result();
+    }
+
     public function update($po_id, $data) {
         $this->db->where('po_id', $po_id)->update('purchase_orders', $data);
     }

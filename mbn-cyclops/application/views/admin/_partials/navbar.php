@@ -1,7 +1,7 @@
 <head>
     <style>
         .bg-cyclops {
-            background: linear-gradient(135deg,rgb(179, 226, 245),rgb(79, 195, 249)); /* warna biru gradasi */
+            background: linear-gradient(135deg,#ff6c6cff, #ff1f1fff); /* warna biru gradasi */
             color: white;
         }
     </style>
@@ -12,7 +12,7 @@
     <!-- <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a> bg-dark-->
     <a class="navbar-brand ps-3" href="<?php echo site_url('admin') ?>">
         <img src="<?= base_url('assets/img/MBN_logo.png') ?>" alt="Logo" style="width: 50px; height: 50px; margin-bottom: -50px; margin-left: 0px;">
-        <span style="display: flex; font-size: 17px; font-weight: bold; color:rgba(0, 0, 0, 1); margin-bottom: 30px; margin-left: 60px;">Sistem Pesan Katering</span>
+        <span style="display: flex; font-size: 17px; font-weight: bold; color:rgba(0, 0, 0, 1); margin-bottom: 30px; margin-left: 60px;">Program Makan Gratis Nasional</span>
     </a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!" style="margin-left: 30px;"><i class="fas fa-bars" style="color: black;"></i></button>
